@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: runexample
+spec:
+  taskref:
+    name: example
+  params:
+    - name: hong_string
+      value: "this is hong string params"
+
+    - name: hong_array
+      value:
+        - "array1"
+        - "array2"
+        - "array3"

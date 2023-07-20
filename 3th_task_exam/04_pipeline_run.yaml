@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: pipelinerunexample
+spec:
+  pipelineRef:
+    name: pipelineforexample
+  params:
+    - name: string_from_pprun
+      value: "this is from pipelinerun string"
+
+    - name: array_from_pprun
+      value:
+        - "this is array1 from ppr"
+        - "this is array2 from ppr"

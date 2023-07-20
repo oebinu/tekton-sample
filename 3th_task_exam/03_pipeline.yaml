@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: pipelineforexample
+spec:
+  params:
+    - name: string_from_pprun
+      type: string
+
+    - name: array_from_pprun
+      type: array
+  tasks:
+    - name: task1
+      taskref:
+        name: example
+      params:
+       - name: hong_string
+         value: "$(params.string_from_pprun)"
+       - name: hong_array
+         value: "$(params.array_from_pprun[*])"

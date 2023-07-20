@@ -1,0 +1,30 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: clone-private-read
+spec:
+  params:
+  - name: repo-url
+    type: string
+
+  workspaces:
+  - name: shared-private-data
+
+  tasks:
+  - name: fetch-source
+    taskRef:
+      name: git-private-clone
+    workspaces:
+    - name: output
+      workspace: shared-private-data
+    params:
+    - name: url
+      value: $(params.repo-url)
+
+  - name: show-private-readme
+    runAfter: ["fetch-source"]
+    taskRef:
+      name: show-private-readme
+    workspaces:
+    - name: source
+      workspace: shared-data

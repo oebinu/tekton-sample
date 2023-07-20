@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: example
+spec:
+  params:
+  - name: hong_string
+    type: string
+    default: "say hello"
+
+  - name: hong_default
+    default: "say_default"
+
+  - name: hong_array
+    type: array
+    default: 
+      - " adasdas" 
+      - " adasd22"
+
+  steps:
+    - name: saystring
+      image: ubuntu
+      command:
+        - echo
+      args:
+       - "$(params.hong_string)"
+       - "$(params.hong_array[*])"
+       - "$(params.hong_default)"
