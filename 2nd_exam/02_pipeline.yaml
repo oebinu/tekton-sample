@@ -9,6 +9,7 @@ spec:
 
   workspaces:
   - name: shared-private-data
+  # - name: git-credential-basic
 
   tasks:
   - name: fetch-source
