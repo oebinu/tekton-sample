@@ -1,12 +1,11 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  namespace: hongspace
-  generateName: hong-cicd-run- # make name automate with random index ( for re use pipelinerun yaml )
+  generateName: tekton-deploy- # make name automate with random index ( for re use pipelinerun yaml )
 spec:
-  serviceAccountName: build-bot # sa for git credientials -> pipeline will use for clone private repo
+  serviceAccountName: tekton-build # sa for git credientials -> pipeline will use for clone private repo
   pipelineRef: # select pipeline
-    name: hong-cicd
+    name: tekton-deploy
   podTemplate: # setting taskpod
     securityContext:  # pod security
       fsGroup: 65532 # set volume owner gid = 65532
