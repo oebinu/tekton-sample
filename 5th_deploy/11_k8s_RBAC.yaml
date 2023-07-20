@@ -17,6 +17,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: tekton-build
+    namespace: default
 roleRef:
   kind: ClusterRole
   name: tekton-for-deploy
