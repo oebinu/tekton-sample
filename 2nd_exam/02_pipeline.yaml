@@ -27,4 +27,4 @@ spec:
       name: show-private-readme
     workspaces:
     - name: source
-      workspace: shared-data
+      workspace: shared-private-data

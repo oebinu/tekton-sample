@@ -23,6 +23,8 @@ spec:
       secretName: git-credential-basic
   params: # git address
   - name: repo-url
+    value: "https://git@github.com:oebinu/tekton-sample.git"
+    # value: "https://github.com/oebinu/tekton-sample.git"
     # value: "https://github.com/lijahong/tektontest"
-    value: "https://github.com/oebinu/sample-python.git"
+    # value: "https://github.com/oebinu/sample-python.git"
     # value: "https://git@github.com:oebinu/sample-python.git"
