@@ -21,7 +21,7 @@ spec:
   - name: docker-credentials
     secret:
       secretName: docker-credentials
-      
+
   params: # git address
   - name: repo-url
     value: "https://github.com/oebinu/tekton-sample.git"
@@ -29,7 +29,6 @@ spec:
     value: cocopopo/tekton-sample:v2
   - name: kubectl-args
     value:
-      - "ls -la"
-      # - "apply"
-      # - "-f"
-      # - "10_k8s_deploy.yaml"s
+      - "apply"
+      - "-f"
+      - "10_k8s_deploy.yaml"
