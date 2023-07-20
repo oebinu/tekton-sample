@@ -18,7 +18,10 @@ spec:
         resources:
           requests:
             storage: 1Gi
-
+  - name: docker-credentials
+    secret:
+      secretName: docker-credentials
+      
   params: # git address
   - name: repo-url
     value: "https://github.com/oebinu/tekton-sample.git"
