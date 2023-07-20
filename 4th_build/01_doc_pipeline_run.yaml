@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: clone-build-push-doc-run-
+spec:
+  pipelineRef:
+    name: clone-build-push-doc
+  podTemplate:
+    securityContext:
+      fsGroup: 65532
+  workspaces:
+  - name: shared-data
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+  - name: docker-credentials
+    secret:
+      secretName: docker-credentials
+  params:
+  - name: repo-url
+    value: "https://github.com/oebinu/tekton-sample.git"
+  - name: image-reference
+    value: cocopopo/tekton-sample:v2
+    # value: container.registry.com/sublocation/my_app:version 

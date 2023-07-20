@@ -23,4 +23,4 @@ spec:
   - name: repo-url
     value: "https://github.com/oebinu/tekton-sample.git"
   - name: image-reference
-    value: cocopopo/tekton-sample:v1
+    value: cocopopo/tekton-sample:v2
