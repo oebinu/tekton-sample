@@ -1,11 +1,11 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  generateName: tekton-deploy- # make name automate with random index ( for re use pipelinerun yaml )
+  generateName: tekton-trigger- # make name automate with random index ( for re use pipelinerun yaml )
 spec:
   serviceAccountName: tekton-build # sa for git credientials -> pipeline will use for clone private repo
   pipelineRef: # select pipeline
-    name: tekton-deploy
+    name: tekton-trigger
   podTemplate: # setting taskpod
     securityContext:  # pod security
       fsGroup: 65532 # set volume owner gid = 65532
