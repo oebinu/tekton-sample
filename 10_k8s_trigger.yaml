@@ -61,13 +61,14 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: tekton.oebinu.com
+  # - host: tekton.oebinu.com
+  - host: 
     http:
       paths:
       - backend:
           service:
-            name: tekton-sample-trigger
+            name: el-tekton-eventlistner 
             port:
-              number: 80
+              number: 8080
         path: /*
         pathType: ImplementationSpecific
