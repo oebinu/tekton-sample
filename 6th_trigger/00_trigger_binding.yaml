@@ -23,7 +23,7 @@ spec:
       kind: PipelineRun
       metadata:
         generateName: new-tekton-trigger-run-
-      spec:
+      spec:  
         # serviceAccountName: build-bot # sa for git & docker credientials -> pipeline will use for clone private repo
         serviceAccountName: tekton-build # sa for git credientials -> pipeline will use for clone private repo
         pipelineRef: # select pipeline
