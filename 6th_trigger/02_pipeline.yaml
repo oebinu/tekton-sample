@@ -47,3 +47,6 @@ spec:
     params:
       - name: args
         value: $(params.kubectl-args[*])
+    ### 아래의 코드 추가
+      - name: deployimage
+        value: $(params.image-reference)

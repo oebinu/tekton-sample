@@ -35,6 +35,9 @@ spec:
     - name: image # image for use kubectl to our cluster or other cluster ( if you set kubeconfig )
       default: gcr.io/cloud-builders/kubectl@sha256:8ab94be8b2b4f3d117f02d868b39540fddd225447abf4014f7ba4765cb39f753 #image is huge
       description: Kubectl wrapper image
+    ##### 아래의 코드 추가
+    - name: deployimage # deploy image, which kaniko build
+      description: Name (reference) of the image to build.
   steps:
     - name: kubectl
       image: $(params.image)
@@ -44,6 +47,10 @@ spec:
         # if workspace which yaml file saved has bound, go to that directory
         [[ "$(workspaces.manifest-dir.bound)" == "true" ]] && \
         cd $(workspaces.manifest-dir.path)
+
+        # update yaml file image name
+        # sed -i "s@changetagname@$(params.deployimage)@" test.yaml
+        sed -i "s@changetagname@$(params.deployimage)@" 10_k8s_deploy.yaml
 
         # if kubeconfig workspace has bound and kubeconfig file exist, set env for kubeconfig path
         [[ "$(workspaces.kubeconfig-dir.bound)" == "true" ]] && \
