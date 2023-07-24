@@ -55,7 +55,7 @@ spec:
             - "restart"
             # - "apply"
             - "-f"
-            - "./6th_trigger/10_k8s_trigger.yaml"
+            - "./6th_trigger/10_k8s_deploy.yaml"
 
             # - "10_k8s_deploy.yaml"
             # - "rollout"

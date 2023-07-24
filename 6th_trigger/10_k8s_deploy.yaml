@@ -16,6 +16,7 @@ spec:
       containers: 
       - name: tekton-trigger
         image: cocopopo/tekton-sample:v4
+        # image: cocopopo/tekton-sample:v4
         ports:
         - containerPort: 80
       ### 아래를 추가한다
