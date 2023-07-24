@@ -59,4 +59,4 @@ spec:
             # - "10_k8s_deploy.yaml"
             # - "rollout"
             # - "restart"
-            # - "10_k8s_trigger.yaml"
+            # - "10_k8s_trigger.yaml"  
