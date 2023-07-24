@@ -22,7 +22,7 @@ spec:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
-        generateName: tekton-trigger-run-
+        generateName: new-tekton-trigger-run-
       spec:
         # serviceAccountName: build-bot # sa for git & docker credientials -> pipeline will use for clone private repo
         serviceAccountName: tekton-build # sa for git credientials -> pipeline will use for clone private repo
