@@ -15,7 +15,7 @@ spec:
     spec:
       containers: 
       - name: tekton-trigger
-        image: cocopopo/tekton-sample:v4
+        image: changetagname
         # image: cocopopo/tekton-sample:v4
         ports:
         - containerPort: 80

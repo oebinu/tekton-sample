@@ -51,9 +51,9 @@ spec:
           value: cocopopo/tekton-sample:$(tt.params.imagetag)
         - name: kubectl-args
           value:
-            - "rollout"
-            - "restart"
-            # - "apply"
+            # - "rollout"
+            # - "restart"
+            - "apply"
             - "-f"
             - "./6th_trigger/10_k8s_deploy.yaml"
 
