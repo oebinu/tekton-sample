@@ -1,0 +1,21 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: terraform-cli-example
+spec:
+  workspaces:
+  - name: source
+  tasks:
+  - name: terraform
+    taskRef:
+      name: terraform-cli
+    workspaces:
+    - name: source
+      workspace: source
+    params:
+     - name: terraform-secret
+       value: "terraform-secret"
+     - name: ARGS
+       value:
+         - apply
+         - "-auto-approve"

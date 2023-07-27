@@ -1,0 +1,16 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: terraform-secret
+  namespace: terraform-cli-test
+  selfLink: /api/v1/namespaces/terraform-cli-test/secrets/terraform-secret
+  uid: a015225d-0f8a-11ea-8536-52fdfc072182
+  resourceVersion: '626903'
+  creationTimestamp: '2019-11-25T13:51:05Z'
+data:
+  OS_AUTH_URL: aHR0cDovL3lvdXItY2xvdWQtcHJvZGl2ZGVyLmNvbQ==
+  OS_INSECURE: dHJ1ZQ==
+  OS_PASSWORD: c2VjcmV0
+  OS_TENANT_NAME: bXlfdGVuYW50X25hbWU=
+  OS_USERNAME: bXlfdXNlcl9uYW1l
+type: Opaque
